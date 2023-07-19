@@ -82,7 +82,7 @@ jobs:
     strategy:
       matrix:
         # * Distroless docker container only supports amd64+arm64.
-        arch: ["arm64", "amd64"]
+        arch: ["arm64", "amd64","ppc64le"]
       fail-fast: true
     steps:
       - name: Checkout
@@ -114,7 +114,7 @@ jobs:
     strategy:
       matrix:
         # The distroless image seems to only support amd64 and arm64
-        arch: ["arm64", "amd64"]
+        arch: ["arm64", "amd64","ppc64le"]
     env:
       repo: ${{github.event.repository.name}}
       version: ${{needs.get-product-version.outputs.product-version}}
